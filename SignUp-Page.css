@@ -1,10 +1,11 @@
 body {
     font-family: Arial, sans-serif;
     background-image: url(https://i.pinimg.com/564x/f8/25/c0/f825c0933f8c517e6893cfd56fcc5a9c.jpg);
+ 
   }
   
   .container {
-    max-width: 400px;
+    max-width: 350px;
     margin: 50px auto;
     padding: 50px;
     border: 1px #ccc;

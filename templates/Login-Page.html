@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Login Page</title>
+  <!-- Adjust the path to your CSS file -->
+  <link rel="stylesheet" href="/static/Login-Page.css">
+</head>
+<body>
+  <div class="container">
+    <h2>Login</h2>
+    <!-- Use the correct action attribute to point to the login route -->
+    <form id="login-form" action="/login" method="post">
+      <div class="form-group">
+        <label for="username">Username:</label>
+        <input type="text" id="username" name="username" required>
+      </div>
+      <div class="form-group">
+        <label for="password">Password:</label>
+        <input type="password" id="password" name="password" required>
+      </div>
+      <!-- Adjust the button type and text -->
+      <button type="submit">Login</button>
+    </form>
+  </div>
+  <!-- Adjust the path to your JavaScript file -->
+  <script src="/static/Login-Page.js"></script>
+</body>
+</html>

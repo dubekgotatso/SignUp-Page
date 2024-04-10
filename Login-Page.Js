@@ -1,5 +1,5 @@
 document.addEventListener("DOMContentLoaded", function() {
-    document.getElementById("signup-form").addEventListener("submit", function(event) {
+    document.getElementById("login-form").addEventListener("submit", function(event) {
         event.preventDefault(); // Prevent form submission
 
         // Validate password
@@ -10,8 +10,8 @@ document.addEventListener("DOMContentLoaded", function() {
         }
 
         // If password is valid, proceed with sign up logic
-        // Your sign up logic here
-        // alert("Sign up successful!");
+        // Your login logic here
+        alert("login up successful!");
     });
 });
 
@@ -26,4 +26,3 @@ function isValidPassword(password) {
     var hasSymbol = /[!@#$%^&*()_+\-=[\]{};':"\\|,.<>/?]/.test(password);
     return hasNumber && hasLetter && hasSymbol;
 }
-

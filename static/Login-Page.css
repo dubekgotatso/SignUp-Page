@@ -1,6 +1,6 @@
 body {
     font-family: Arial, sans-serif;
-    background-image: url(https://i.pinimg.com/564x/f8/25/c0/f825c0933f8c517e6893cfd56fcc5a9c.jpg);
+    background-image: url(/static/_\ \(3\).jpeg);
  
   }
   
@@ -10,7 +10,7 @@ body {
     padding: 50px;
     border: 1px #ccc;
     border-radius: 5px;
-    background-color: whitesmoke;
+    background-color: rgba(245, 245, 245, 0.46);
   }
   
   .form-group {
@@ -24,7 +24,6 @@ body {
   }
   
   input[type="text"],
-  input[type="email"],
   input[type="password"]
    {
     width: 100%;

@@ -4,12 +4,12 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Signup Page</title>
-  <link rel="stylesheet" href="/SignUp-Page.css">
+  <link rel="stylesheet" href="/static/SignUp-Page.css">
 </head>
 <body>
   <div class="container">
     <h2>Sign Up</h2>
-    <form id="signup-form" onsubmit="return validateForm()">
+    <form id="signup-form" action="/signup" method="post" onsubmit="return validateForm()">
       <div class="form-group">
         <label for="username">Username:</label>
         <input type="text" id="username" name="username" required>
@@ -29,6 +29,6 @@
       <button type="submit">Sign Up</button>
     </form>
   </div>
-  <script src="/SignUp-Page.Js"></script>
+  <script src="/static/SignUp-Page.Js"></script>
 </body>
 </html>

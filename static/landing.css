@@ -7,6 +7,7 @@ body {
     background-position: center;
     background-repeat: no-repeat;
     background-attachment: fixed;
+    background-color: #fff;
 }
 
 /* Styling the navigation bar */
@@ -67,13 +68,14 @@ nav ul li a:hover {
     max-width: 250px; /* Adjust as needed */
     text-align: center;
     margin: 0 10px; /* Adds space between cards */
-    background-color: burlywood;
-    color: #fff;
+    background-color: transparent;
+    color: #030202;
+    margin-top: 70px;
 }
 
 .card img {
     width: 70%;
-    height: 100px;
+    height: 200px;
     border-radius: 10px;
     margin: 0 10px;
 }
@@ -93,12 +95,13 @@ nav ul li a:hover {
 }
 
 .hu{
-    background-image: url(https://i.pinimg.com/474x/8d/23/10/8d2310e036a82cfcbae911f3f411f342.jpg);
+    background-image: url();
     background-repeat: no-repeat;
     background-size: cover;
     width: 70%;
     height: 600px;
     margin: 10px auto 0;
+   
 }
 
 .n{
@@ -112,7 +115,8 @@ nav ul li a:hover {
     background-repeat: no-repeat;
     background-size: cover;
     margin: 10px auto 0;
-    background-image: url(https://hips.hearstapps.com/hmg-prod/images/190827-beauty-best-hair-products-1566922412.png);
+    background-image: url(https://www.scapegear.co.za/cdn/shop/files/Artboard15.jpg?v=1705434812&width=1000);
+    margin-top: 100px;
 }
 
 .n1{
@@ -126,6 +130,7 @@ nav ul li a:hover {
     justify-content: center; /* Center the cards horizontally */
     gap: 20px; /* Add spacing between cards */
     padding: 20px;
+    
 }
 
 /* Card styles */
@@ -136,4 +141,29 @@ nav ul li a:hover {
 .card-img-top {
     width: 100%;
     height: auto;
+}
+.containerA{
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 1400px;
+    height: 700px;
+    background-image: url(https://i.pinimg.com/564x/bf/ae/9d/bfae9d5a5b4b395163d3e44b08e65786.jpg);
+    margin-top: 50px;
+    border: 1px solid black;
+    display: flex;
+    justify-content: center; /* Center the cards horizontally */
+    gap: 20px; /* Add spacing between cards */
+    padding: 20px;
+}
+.card1{
+    width: 18rem;
+    border-radius: 50px;
+}
+.card1 img {
+    width: 70%;
+    height: 180px;
+    border-radius: 100px;
+    margin: 0 10px;
+    margin-top: 20px;
+
 }

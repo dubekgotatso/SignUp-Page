@@ -3,12 +3,16 @@ body {
     margin: 0;
     padding: 20px;
     background-color: hsl(0, 8%, 95%);
-    background-image: url(/static/Blind\ Barber\ Leans\ Into\ Quiet\ Luxury\ with\ Their\ Modestly\ High-End\ Bath\ Products.jpeg);
+    background-image:url(https://i.pinimg.com/564x/fb/91/6e/fb916ed74fa531043934984d7426f646.jpg) ;
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
     background-attachment: fixed;
     background-color: #fff;
+}
+
+.h1{
+   background-color: azure;
 }
 
 /* Styling the navigation bar */
@@ -72,6 +76,7 @@ nav ul li a:hover {
     background-color: transparent;
     color: #030202;
     margin-top: 70px;
+    margin-top: 350px;
 }
 
 .card img {
@@ -79,7 +84,6 @@ nav ul li a:hover {
     height: 200px;
     border-radius: 10px;
     margin: 0 10px;
-    margin-left: 30px;
 }
 
 .card-description {
@@ -96,35 +100,8 @@ nav ul li a:hover {
     font-size: 14px;
 }
 
-.hu{
-    background-image: url();
-    background-repeat: no-repeat;
-    background-size: cover;
-    width: 70%;
-    height: 600px;
-    margin: 10px auto 0;
-   
-}
 
-.n{
-    color: bisque;
-}
 
-.hu1{
-    background-color: white;
-    width: 90%;
-    height: 900px;
-    background-repeat: no-repeat;
-    background-size: cover;
-    margin: 10px auto 0;
-    background-image: url(https://www.scapegear.co.za/cdn/shop/files/Artboard15.jpg?v=1705434812&width=1000);
-    margin-top: 100px;
-}
-
-.n1{
-    color: rgb(219, 126, 13);
-
-}
 
 /* Styles to place cards horizontally with spacing */
 .card-container {
@@ -144,32 +121,33 @@ nav ul li a:hover {
     width: 100%;
     height: auto;
 }
-.containerA{
-    background-repeat: no-repeat;
-    background-size: cover;
-    width: 1400px;
-    height: 700px;
-    background-image: url(https://i.pinimg.com/474x/ab/50/a5/ab50a5639ed60da9c9bbcf6df5ad2837.jpg);
-    margin-top: 50px;
-    border: 1px solid black;
-    display: flex;
-    justify-content: center; /* Center the cards horizontally */
-    gap: 10px; /* Add spacing between cards */
-    padding: 20px;
+
+.button-container {
+    position: absolute;
+    top: 60%;
+    left: 51%;
+    transform: translate(-50%, -50%);
+
+  }
+  
+  .image-button {
+    display: block;
+    margin-bottom: 10px;
+  }
+
+  .button-container {
+    text-align: center; /* Optional: Centers the buttons horizontally */
 }
-.card1{
-    width: 18rem;
-    border-radius: 50px;
+
+.button-container button {
+    display: inline-block;
+    margin-right: 10px; /* Optional: Adds space between buttons */
+    background-color: #5de1e6;
+    width: 120px;
+    height: 30px;
+    border-radius: 20px; 
 }
-.card1 img {
-    width: 50%;
-    height: 120px;
-    border-radius: 100px;
-    margin: 0 10px 5px;
-    margin-top: -10px;
-    text-align-last: center;
-    margin-left: 50px;
-    padding: 20px;
-}
+
+ 
   
  

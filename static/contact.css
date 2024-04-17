@@ -1,0 +1,74 @@
+/* General styles */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f5f5f5;
+    color: #333;
+    background-image: url(/static/Blind\ Barber\ Leans\ Into\ Quiet\ Luxury\ with\ Their\ Modestly\ High-End\ Bath\ Products.jpeg);
+}
+
+header, main, footer {
+    padding: 20px;
+    text-align: center;
+}
+
+/* Header styles */
+header h1 {
+    margin-bottom: 10px;
+    font-size: 2em;
+}
+
+/* Main content styles */
+main section {
+    padding: 20px;
+    background-color: white;
+    margin: 10px auto;
+    border-radius: 8px;
+    width: 80%;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Section headers */
+main section h2 {
+    font-size: 1.5em;
+    margin-bottom: 10px;
+}
+
+/* Contact form styles */
+.contact-form .form-group {
+    margin-bottom: 10px;
+}
+
+.contact-form label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+.contact-form input,
+.contact-form textarea {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+.contact-form button {
+    padding: 10px 15px;
+    background-color: #333;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.contact-form button:hover {
+    background-color: #555;
+}
+
+/* Footer styles */
+footer {
+    padding: 10px;
+    background-color: #333;
+    color: white;
+}

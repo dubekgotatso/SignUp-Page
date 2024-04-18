@@ -14,86 +14,11 @@
             <h1>Booking Form</h1>
     
             <!-- Booking Form -->
-            <form action="/bookings" method="post">
-                <input type="date" id="bookingDate" name="bookingdate" required>
-                <button type="submit">Book Now</button>
-            </form>
-    
-            <!-- Calendar Table -->
-            <table>
-                <caption>January Calendar</caption>
-                <thead>
-                    <tr>
-                        <th>Sun</th>
-                        <th>Mon</th>
-                        <th>Tue</span>
-                        <th>Wed</th>
-                        <th>Thu</th>
-                        <th>Fri</th>
-                        <th>Sat</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <!-- Add rows with days -->
-                    <tr>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td class="highlight">1</td>
-                        <td>2</td>
-                    </tr>
-                    <tr>
-                        <td>3</td>
-                        <td>4</td>
-                        <td>5</td>
-                        <td class="highlight">6</td>
-                        <td>7</td>
-                        <td>8</td>
-                        <td>9</td>
-                    </tr>
-                    <tr>
-                        <td class="highlight">10</td>
-                        <td>11</td>
-                        <td>12</td>
-                        <td>13</td>
-                        <td>14</td>
-                        <td class="highlight">15</td>
-                        <td>16</td>
-                    </tr>
-                    <tr>
-                        <td>17</td>
-                        <td>18</td>
-                        <td>19</td>
-                        <td>20</td>
-                        <td class="highlight">21</td>
-                        <td>22</td>
-                        <td>23</td>
-                    </tr>
-                    <tr>
-                        <td>24</td>
-                        <td>25</td>
-                        <td>26</td>
-                        <td>27</td>
-                        <td>28</td>
-                        <td>29</td>
-                        <td>30</td>
-                    </tr>
-                    <tr>
-                        <td>31</td>
-                        <td>1</td>
-                        <td>2</td>
-                        <td>3</td>
-                        <td>4</td>
-                        <td>5</td>
-                        <td>6</td>
-                    </tr>
-                </tbody>
-            </table>
-    
+         
+             <a href="/AddBooking"><button type="submit">Book Now</button></a>
+{{Bookings}}
             <!-- Booking details table -->
-            <table border="1">
+            <table action="/Booking" method="GET" border="1">
                 <caption>Booking Details</caption>
                 <thead>
                     <tr>
@@ -103,17 +28,16 @@
                         <th>Price</th>
                     </tr>
                 </thead>
-                <tbody>
-                    <!-- Loop through bookings (assumes you have server data) -->
+<!-- Loop through bookings (assumes you have server data) -->
                     {% for booking in bookings %}
                         <tr>
-                            <td>{{ booking.category }}</td>
-                            <td>{{ booking.date }}</td>
-                            <td>{{ booking.time }}</td>
-                            <td>{{ booking.price }}</td>
+                            <td>{{booking.category }}</td>
+                            <td>{{booking.date }}</td>
+                            <td>{{booking.time }}</td>
+                            <td>{{booking.price }}</td>
                         </tr>
                     {% endfor %}
-                </tbody>
+
             </table>
         </div>
             

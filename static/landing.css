@@ -172,4 +172,12 @@ nav ul li a:hover {
     padding: 20px;
 }
   
- 
+.button-container button {
+    display: inline-block;
+    margin-left: 10px; /* Optional: Adds space between buttons */
+    background-color: #22b8c9;
+    width: 100px;
+    height: 30px;
+    border-radius: 10px; 
+    margin-top: 50px;
+}

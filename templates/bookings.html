@@ -1,46 +1,41 @@
 <!DOCTYPE html>
-
 <html>
     <head>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <title></title>
-        <meta name="description" content="">
+        <title>Booking Form</title>
+        <meta name="description" content="Booking form page">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="stylesheet" href="/static/bookings.css">
     </head>
     <body>
         <div class="container">
             <h1>Booking Form</h1>
-    
-            <!-- Booking Form -->
-         
-             <a href="/AddBooking"><button type="submit">Book Now</button></a>
-{{Bookings}}
+           
+            <!-- Button to AddBooking Page -->
+            <a href="/AddBooking"><button type="button">Book Now</button></a>
+            
             <!-- Booking details table -->
-            <table action="/Booking" method="GET" border="1">
+            <table action="/Booking" method="Get" border="1">
                 <caption>Booking Details</caption>
                 <thead>
                     <tr>
                         <th>Category</th>
                         <th>Date</th>
                         <th>Time</th>
-                        <th>Price</th>
                     </tr>
                 </thead>
-<!-- Loop through bookings (assumes you have server data) -->
-                    {% for booking in bookings %}
-                        <tr>
-                            <td>{{booking.category }}</td>
-                            <td>{{booking.date }}</td>
-                            <td>{{booking.time }}</td>
-                            <td>{{booking.price }}</td>
-                        </tr>
+                <tbody>
+                    <!-- Loop through bookings (assumes you have server data) -->
+                    {% for booking in booking %}
+                    <tr>
+                        <td>{{ booking.category }}</td>
+                        <td>{{ booking.date }}</td>
+                        <td>{{ booking.time }}</td>
+                    </tr>
                     {% endfor %}
-
+                </tbody>
             </table>
         </div>
-            
-        </body>
-
-       </html>
+    </body>
+</html>

@@ -1,7 +1,11 @@
 body {
     font-family: Arial, sans-serif;
-    background-image: url(/static/Salon\ Republic\ Beverly\ Hills\ -\ Hair\ Salon\ Suite.jpeg);
-    
+    background-image: url(https://i.pinimg.com/564x/09/94/ec/0994eccaab2f8a218f67f0731d9f38be.jpg);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-color: #fff;
  
   }
   

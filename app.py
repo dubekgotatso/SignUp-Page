@@ -55,14 +55,21 @@ def login():
     return render_template('Login-Page.html')
 
 # Booking
-@app.route("/Booking", methods=["GET", "POST"])
-def view_bookings():
-    user_id = session.get('user_id')
-    if user_id:
-        bookings = mongo.db.booking.find({'user_id': ObjectId(user_id)})
-        if bookings.count()== 0:
-           return render_template('bookings.html', bookings=bookings)
-    return render_template("bookings.html") 
+
+@app.route("/Booking", methods=["POST", "GET"] )
+def getBooking():
+     if request.method == 'GET':
+          Booking = []
+
+          for i in db.booking.find():
+            Booking.append(i)
+            
+             
+     
+     return render_template("bookings.html" , Booking=Booking )
+      
+ 
+      
 
 @app.route("/AddBooking", methods=["GET", "POST"])
 def addbooking():
@@ -70,9 +77,9 @@ def addbooking():
       category = request.form["category"]
       time = request.form["time"]
       date = request.form["date"]
-      price = request.form["price"]
+     
       
-      booking = {"category":category,"time":time,"date":date,"price":price}
+      booking = {"category":category,"time":time,"date":date,}
       db.booking.insert_one(booking)
       if ('form submission success'):
                      return render_template("bookings.html")

@@ -3,7 +3,7 @@ body {
     margin: 0;
     padding: 20px;
     background-color: hsl(0, 8%, 95%);
-    background-image:url(https://i.pinimg.com/564x/fb/91/6e/fb916ed74fa531043934984d7426f646.jpg) ;
+    background-image:url(https://i.pinimg.com/564x/09/94/ec/0994eccaab2f8a218f67f0731d9f38be.jpg) ;
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -12,7 +12,8 @@ body {
 }
 
 .h1{
-   background-color: azure;
+   background-color: rgb(204, 220, 220);
+   color: #fff;
 }
 
 /* Styling the navigation bar */
@@ -74,7 +75,7 @@ nav ul li a:hover {
     text-align: center;
     margin: 0 10px; /* Adds space between cards */
     background-color: transparent;
-    color: #030202;
+    color: whitesmoke;
     margin-top: 70px;
     margin-top: 350px;
 }
@@ -146,6 +147,7 @@ nav ul li a:hover {
     width: 120px;
     height: 30px;
     border-radius: 20px; 
+    margin-bottom: 300px;
 }
 
 

@@ -5,8 +5,14 @@ body {
     padding: 0;
     background-color: #f5f5f5;
     color: #333;
-    background-image: url(/static/Blind\ Barber\ Leans\ Into\ Quiet\ Luxury\ with\ Their\ Modestly\ High-End\ Bath\ Products.jpeg);
+    background-image: url(https://i.pinimg.com/564x/09/94/ec/0994eccaab2f8a218f67f0731d9f38be.jpg);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-color: #fff;
 }
+
 
 header, main, footer {
     padding: 20px;
@@ -25,7 +31,7 @@ main section {
     background-color: white;
     margin: 10px auto;
     border-radius: 8px;
-    width: 80%;
+    width: 50%;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
@@ -40,11 +46,11 @@ footer {
     padding: 10px;
     background-color: #333;
     color: white;
-    margin-top: 50px;
+    margin-top: 100px;
 }
 
 /* Other styling options */
 ul {
-    list-style-type: disc;
+    list-style-type: none;
     padding-left: 20px;
 }

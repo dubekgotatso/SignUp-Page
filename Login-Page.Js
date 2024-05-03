@@ -9,9 +9,9 @@ document.addEventListener("DOMContentLoaded", function() {
             return;
         }
 
-        // If password is valid, proceed with sign up logic
-        // Your login logic here
-        alert("login up successful!");
+        // // If password is valid, proceed with sign up logic
+        // // Your login logic here
+        // alert("login up successful!");
     });
 });
 

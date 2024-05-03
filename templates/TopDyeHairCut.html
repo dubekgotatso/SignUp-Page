@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title></title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="/static/TopDyeHairCut.css">
+    </head>
+    <body>
+
+
+        <nav>
+            <ul>
+                <li><a href="#">Home</a></li>
+                <li><a href="/About">About</a></li>
+                <li><a href="/Booking">Bookings</a></li>
+                <li><a href="/Services">Services</a></li>
+            </ul>
+        </nav>
+
+        <div class="content">
+           
+            <div class="button-container">
+                <a href="/Addhaircut"><button>Add</button></a>
+                <button>Update</button>
+                <button>Delete</button>
+            </div>
+            <table border="1">
+                <thead>
+                    <tr>
+                        <th>Name</th>
+                        <th>Price</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for i in x %}
+                    <tr>
+                        <td>{{ i.name }}</td>
+                        <td><p>R{{ i.price }}</p></td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+      
+
+        
+        
+        <script src="" async defer></script>
+    </body>
+</html>

@@ -13,48 +13,9 @@ body {
 
 .h1{
    background-color: rgb(204, 220, 220);
-   color: #fff;
+   
 }
 
-/* Styling the navigation bar */
-nav {
-    background-color: #333;
-    position: fixed; /* Fixed position */
-    top: 0; /* Lock it at the top */
-    width: 100%; /* Full width of the viewport */
-    background-color: #333; /* Background color */
-    padding: 10px;
-    color: white;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    z-index: 1000;
-   margin-right: 500px;
-    float: left;
-}
-
-/* Styling the navigation links */
-nav ul {
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
-}
-
-nav ul li {
-    display: inline;
-}
-
-nav ul li a {
-    text-decoration: none;
-    color: #fff;
-    padding: 10px 20px;
-    display: inline-block;
-    transition: background-color 0.3s ease;
-}
-
-nav ul li a:hover {
-    background-color: #555;
-}
 
 .container {
     display: flex;

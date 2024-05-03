@@ -11,7 +11,7 @@ document.addEventListener("DOMContentLoaded", function() {
 
         // If password is valid, proceed with sign up logic
         // Your sign up logic here
-        // alert("Sign up successful!");
+        alert("Sign up successful!");
     });
 });
 
@@ -26,4 +26,3 @@ function isValidPassword(password) {
     var hasSymbol = /[!@#$%^&*()_+\-=[\]{};':"\\|,.<>/?]/.test(password);
     return hasNumber && hasLetter && hasSymbol;
 }
-

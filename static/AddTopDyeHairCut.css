@@ -1,6 +1,6 @@
 body {
     font-family: Arial, sans-serif;
-    background-image: url(/static/WhatsApp\ Image\ 2024-02-27\ at\ 05.22.34.jpeg);
+    background-image: url(https://i.pinimg.com/564x/09/94/ec/0994eccaab2f8a218f67f0731d9f38be.jpg);
     position: relative;
     background-size: cover;
 }
@@ -50,7 +50,7 @@ button[type="submit"] {
 }
 
 button[type="submit"]:hover {
-    background-color: #45a049;
+    background-color: aqua;
 }
 
 .sidebar {

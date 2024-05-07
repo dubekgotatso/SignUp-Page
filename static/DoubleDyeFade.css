@@ -60,7 +60,7 @@ nav ul li a:hover {
   .button-container button {
     display: inline-block;
     margin-right: 10px; /* Optional: Adds space between buttons */
-    background-color: rgb(93, 100, 100);
+    background-color: aqua;
     width: 120px;
     height: 30px;
     border-radius: 10px; 
@@ -70,7 +70,7 @@ nav ul li a:hover {
     height: 60px;
     width:900px;
     background-color: #DDD0C0;
-    border: #111111;
+    border: #050505;
     border-radius: 10px;
     padding-right: 10px;
     padding-left: 20px;
@@ -127,16 +127,16 @@ nav ul li a:hover {
   }
   
   table, th, td {
-  border: 1px solid rgb(98, 96, 96);
+  border: 1px solid black;
   }
   
   th, td {
   padding: 8px;
   text-align: left;
   margin-left: 100px;
- color: rgb(208, 213, 219);
+ color: rgb(12, 13, 14);
   }
   
   th {
-  background-color: #b3a9a9;
+  background-color: #f2f2f2;
   }

@@ -50,7 +50,7 @@ button[type="submit"] {
 }
 
 button[type="submit"]:hover {
-    background-color: aqua;
+    background-color: #45a049;
 }
 
 .sidebar {

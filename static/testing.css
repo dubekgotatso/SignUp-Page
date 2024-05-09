@@ -13,6 +13,7 @@ body {
 
 .h1{
    background-color: rgb(204, 220, 220);
+  
    
 }
 
@@ -104,11 +105,12 @@ body {
 .button-container button {
     display: inline-block;
     margin-right: 10px; /* Optional: Adds space between buttons */
-    background-color: #5de1e6;
+    background-color: #4d5051;
     width: 120px;
     height: 30px;
     border-radius: 20px; 
     margin-bottom: 300px;
+    color: whitesmoke;
 }
 
 

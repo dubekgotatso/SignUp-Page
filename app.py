@@ -132,28 +132,31 @@ def getCut():
 
           for i in db.FadeWaveCut.find():
             cut.append(i)
-
+            
      return render_template("FadeWaveCuts.html" , x=cut )
  
- #Delete FadewaveCut
  
-FadeWaveCut= [
-    {"id": 1, "name":"price"},
-]
-
-@app.route('/FadeWaveCuts', methods=['GET', 'POST'])
-def FadeWaveCuts():
+@app.route('/delete_FadeWaveCut', methods=['POST'])
+def delete_FadeWaveCut():
     if request.method == 'POST':
-        if 'delete' in request.form:
-            id_to_delete = int(request.form['delete'])
-            global FadeWaveCuts
-            FadeWaveCut = [row for row in FadeWaveCut if row['id'] != id_to_delete]
-            return render_template('FadeWaveCuts.html', FadeWaveCuts=FadeWaveCuts)
+        FadeWaveCut_id = request.form.get('delete_id')  # Get the ID of the record to delete
+        # Convert the string ID to ObjectId
+        FadeWaveCut_id = ObjectId(FadeWaveCut_id)
+        # Delete the record from the collection
+        result = db.FadeWaveCut.delete_one({'_id': FadeWaveCut_id})
+        if result.deleted_count == 1:
+           return render_template('FadeWaveCuts.html')
+        else:
+            return 'Record not found or could not be deleted.'
 
-    return render_template('FadeWaveCuts.htmll', FadeWaveCuts=FadeWaveCuts)
- 
+@app.route('/')
+def getFadeWaveCut():
+    # Fetch data from the collection
+    FadeWaveCut = db.FadeWaveCut.find(FadeWaveCut)
+    return render_template('FadeWaveCuts.html', FadeWaveCut=FadeWaveCut)
+
  # Add BobCuts
-
+ 
 @app.route('/AddBobCuts', methods=["POST", "GET"])
 def Add_Bob_Cuts():
     if request.method == 'POST':

@@ -134,6 +134,57 @@ def getCut():
             cut.append(i)
 
      return render_template("FadeWaveCuts.html" , x=cut )
+ 
+ #Delete FadewaveCut
+ 
+FadeWaveCut= [
+    {"id": 1, "name":"price"},
+]
+
+@app.route('/FadeWaveCuts', methods=['GET', 'POST'])
+def FadeWaveCuts():
+    if request.method == 'POST':
+        if 'delete' in request.form:
+            id_to_delete = int(request.form['delete'])
+            global FadeWaveCuts
+            FadeWaveCut = [row for row in FadeWaveCut if row['id'] != id_to_delete]
+            return render_template('FadeWaveCuts.html', FadeWaveCuts=FadeWaveCuts)
+
+    return render_template('FadeWaveCuts.htmll', FadeWaveCuts=FadeWaveCuts)
+ 
+ # Add BobCuts
+
+@app.route('/AddBobCuts', methods=["POST", "GET"])
+def Add_Bob_Cuts():
+    if request.method == 'POST':
+        name = request.form['name']
+        price = request.form['price']
+        
+        BobCuts = { 'name': name, 'price': price}
+
+        db.BobCuts.insert_one(BobCuts)
+        if ('form submission success'):
+                     return redirect (url_for('getBob'))
+        else:
+
+                  if ('form submission failed'):
+                   return 'form unsuccessful'
+        
+    return render_template("AddBobCuts.html")
+
+
+# Display BobCuts
+
+@app.route("/BobCuts", methods=["POST", "GET"] )
+def getBob():
+     if request.method == 'GET':
+          Bob = []
+
+          for i in db.BobCuts.find():
+           Bob.append(i)
+
+     return render_template("BobCuts.html" , x=Bob )
+ 
 
 
 # Add BrushWaveCut
@@ -229,39 +280,7 @@ def getTop():
           for i in db.TopDyeHairCut.find():
             Top.append(i)
 
-     return render_template("TopDyeHairCut.html" , x=Top )
-
- # Add BobCuts
-@app.route('/AddBobCuts.html', methods=["POST", "GET"])
-def AddBobCuts():
-    if request.method == 'POST':
-        name = request.form['name']
-        price = request.form['price']
-        
-        BobCuts= { 'name': name, 'price': price}
-
-        db.BobCuts.insert_one(BobCuts)
-        if ('form submission success'):
-                     return redirect (url_for('getBob'))
-        else:
-
-                  if ('form submission failed'):
-                   return 'form unsuccessful'
-        
-    return render_template("BobCuts.html")
-
-
-#Display BobCuts
-
-@app.route("/BobCuts", methods=["POST", "GET"] )
-def getBob():
-     if request.method == 'GET':
-         Bob = []
-
-         for i in db.BobCuts.find():
-            Bob.append(i)
-
-     return render_template("BobCuts.html" , x=Bob )
+     return render_template("TopDyeHairCut.html" , x=Top ) 
  
  # Add StyleCutDye
 @app.route('/AddStyleCutDye', methods=["POST", "GET"])
@@ -280,7 +299,7 @@ def Add_Style_Cut_Dye():
                   if ('form submission failed'):
                    return 'form unsuccessful'
         
-    return render_template("StyleCutDye.html")
+    return render_template("AddStyleCutDye.html")
 
 #Display StyleCutDye
 
@@ -311,7 +330,7 @@ def AddFadeCutFluffyDye():
                   if ('form submission failed'):
                    return 'form unsuccessful'
         
-    return render_template("FadeCutFluffyDye.html")
+    return render_template("AddFadeCutFluffyDye.html")
 
 #Display FadeCutFluffyDye
 
@@ -347,7 +366,7 @@ def AddDyeCurlyCuts():
 #Display DyeCurlyCuts
 
 @app.route("/DyeCurlyCuts", methods=["POST", "GET"] )
-def getDyeCurlyCuts():
+def getDye():
      if request.method == 'GET':
         Dye = []
 
@@ -355,7 +374,9 @@ def getDyeCurlyCuts():
           Dye.append(i)
 
      return render_template("DyeCurlyCuts.html" , x=Dye )
-
+ 
+ 
+ 
  
 if __name__ == "__main__":
     app.run(debug=True)

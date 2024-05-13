@@ -6,7 +6,9 @@
     <title>Service Form</title>
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="/static/DeleteFadeWaveCut.css">
+     <link rel="stylesheet" href="/static/AddFadeWaveCut.css">
+       
+    </style>
 </head>
 <body>
     <div class="container">
@@ -17,13 +19,11 @@
                        <center><h2>Fade Wave Cut</h2></center>
                            <br><br><br>
             
-                          
-                                   <input type="text" name="name" placeholder="Name" required>
-                                      <input type="number" name="price" placeholder="Price" required><br><br>
-                                        <!-- Add a hidden input field to indicate soft delete -->
-                                        <input type="hidden" name="soft_delete" value="true">
+                                
+                                   <input type="text" id= "name" name = "Name" required>
+                                   <input type="number" id="price" price="price" maxlength="5" required>
                                         <center><button type="submit">Delete</button></center>
-           
+                                      
       </div> 
      </form> 
    </div> 

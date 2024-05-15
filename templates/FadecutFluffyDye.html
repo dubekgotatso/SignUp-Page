@@ -51,8 +51,13 @@
                     <tr>
                         <td>{{ i.name }}</td>
                         <td><p>R{{ i.price }}</p></td>
+                        <td>
+                            <form action="/delete_FadeCutFluffyDye" method="post">
+                                <input type="hidden" id="delete_id" name="delete_id" value={{i._id}}>
+                                <input type="submit" value="Delete">
+                              </form>
+                        </td>
                     </tr>
-                    <button onclick="deleteFadeCutFluffyDye('{{ FadeCutFluffyDye._id }}')">Delete</button>
                     {% endfor %}
                 </tbody>
             </table>

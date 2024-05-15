@@ -145,7 +145,11 @@ def delete_FadeWaveCut():
         # Delete the record from the collection
         result = db.FadeWaveCut.delete_one({'_id': FadeWaveCut_id})
         if result.deleted_count == 1:
-           return render_template('FadeWaveCuts.html')
+            cut = []
+
+            for i in db.FadeWaveCut.find():
+                cut.append(i)
+            return render_template('FadeWaveCuts.html', x=cut)
         else:
             return 'Record not found or could not be deleted.'
 
@@ -188,6 +192,31 @@ def getBob():
 
      return render_template("BobCuts.html" , x=Bob )
  
+ 
+@app.route('/delete_BobCuts', methods=['POST'])
+def delete_BobCuts():
+    if request.method == 'POST':
+        BobCuts_id = request.form.get('delete_id')  # Get the ID of the record to delete
+        # Convert the string ID to ObjectId
+        BobCuts_id = ObjectId(BobCuts_id)
+        # Delete the record from the collection
+        result = db.BobCuts.delete_one({'_id': BobCuts_id})
+        if result.deleted_count == 1:
+            Bob = []
+
+            for i in db.BobCuts.find():
+                Bob.append(i)
+            return render_template('BobCuts.html', x=Bob)
+        else:
+            return 'Record not found or could not be deleted.'
+
+@app.route('/')
+def getBobCuts():
+    # Fetch data from the collection
+    BobCuts = db.BobCuts.find(BobCuts)
+    return render_template('BobCuts.html', BobCuts=BobCuts)
+
+ 
 
 
 # Add BrushWaveCut
@@ -221,6 +250,32 @@ def getBrush():
             Brush.append(i)
 
      return render_template("BrushWaveCuts.html" , x=Brush )
+ 
+ 
+@app.route('/delete_BrushWaveCut', methods=['POST'])
+def delete_BrushWaveCut():
+    if request.method == 'POST':
+        BrushWaveCut_id = request.form.get('delete_id')  # Get the ID of the record to delete
+        # Convert the string ID to ObjectId
+        BrushWaveCut_id = ObjectId(BrushWaveCut_id)
+        # Delete the record from the collection
+        result = db.BrushWaveCut.delete_one({'_id': BrushWaveCut_id})
+        if result.deleted_count == 1:
+            Brush = []
+
+            for i in db.BrushWaveCut.find():
+               Brush .append(i)
+            return render_template('BrushWaveCuts.html', x=Brush )
+        else:
+            return 'Record not found or could not be deleted.'
+
+@app.route('/')
+def getBrushWaveCut():
+    # Fetch data from the collection
+   BrushWaveCut = db.BrushWaveCut.find(BrushWaveCut)
+   return render_template('BrushWaveCuts.html', BrushWaveCut=BrushWaveCut)
+
+ 
  
  
  # Add DoubleDyeFade
@@ -283,7 +338,32 @@ def getTop():
           for i in db.TopDyeHairCut.find():
             Top.append(i)
 
-     return render_template("TopDyeHairCut.html" , x=Top ) 
+     return render_template("TopDyeHairCut.html" , x=Top)
+ 
+ 
+@app.route('/delete_TopDyeHairCut', methods=['POST'])
+def delete_TopDyeHairCut():
+    if request.method == 'POST':
+        TopDyeHairCut_id = request.form.get('delete_id')  # Get the ID of the record to delete
+        # Convert the string ID to ObjectId
+        TopDyeHairCut_id = ObjectId( TopDyeHairCut_id)
+        # Delete the record from the collection
+        result = db. TopDyeHairCut.delete_one({'_id':  TopDyeHairCut_id})
+        if result.deleted_count == 1:
+            Top = []
+
+            for i in db. TopDyeHairCut.find():
+             Top.append(i)
+            return render_template('TopDyeHairCut.html', x=Top )
+        else:
+            return 'Record not found or could not be deleted.'
+
+@app.route('/')
+def getTopDyeHairCut():
+    # Fetch data from the collection
+        TopDyeHairCut = db. TopDyeHairCut.find( TopDyeHairCut)
+        return render_template(' TopDyeHairCut.html',  TopDyeHairCut=TopDyeHairCut)
+  
  
  # Add StyleCutDye
 @app.route('/AddStyleCutDye', methods=["POST", "GET"])
@@ -315,6 +395,32 @@ def getStyle():
            Style.append(i)
 
      return render_template("StyleCutDye.html" , x=Style )
+ 
+ 
+@app.route('/delete_StyleCutDye', methods=['POST'])
+def delete_StyleCutDye():
+    if request.method == 'POST':
+        StyleCutDye_id = request.form.get('delete_id')  # Get the ID of the record to delete
+        # Convert the string ID to ObjectId
+        StyleCutDye_id = ObjectId(StyleCutDye_id)
+        # Delete the record from the collection
+        result = db.StyleCutDye.delete_one({'_id': StyleCutDye_id})
+        if result.deleted_count == 1:
+            Style = []
+
+            for i in db.StyleCutDye.find():
+               Style .append(i)
+            return render_template('StyleCutDye.html', x=Style )
+        else:
+            return 'Record not found or could not be deleted.'
+
+@app.route('/')
+def getStyleCutDye():
+    # Fetch data from the collection
+   StyleCutDye = db.StyleCutDye.find(StyleCutDye)
+   return render_template('StyleCutDye.html', StyleCutDye=StyleCutDye)
+
+ 
 
 # Add FadeCutFluffyDye
 @app.route('/AddFadeCutFluffyDye', methods=["POST", "GET"])
@@ -340,12 +446,37 @@ def AddFadeCutFluffyDye():
 @app.route("/FadeCutFluffyDye", methods=["POST", "GET"] )
 def getFade():
      if request.method == 'GET':
-         Fade = []
+        Fade = []
 
-         for i in db.FadeCutFluffyDye.find():
-           Fade.append(i)
+        for i in db.FadeCutFluffyDye.find():
+          Fade.append(i)
 
      return render_template("FadeCutFluffyDye.html" , x=Fade )
+ 
+ 
+@app.route('/delete_FadeCutFluffyDye', methods=['POST'])
+def delete_FadeCutFluffyDye():
+    if request.method == 'POST':
+       FadeCutFluffyDye_id = request.form.get('delete_id')  # Get the ID of the record to delete
+        # Convert the string ID to ObjectId
+       FadeCutFluffyDye_id = ObjectId(FadeCutFluffyDye_id)
+        # Delete the record from the collection
+       result = db.FadeCutFluffyDye.delete_one({'_id': FadeCutFluffyDye_id})
+    if result.deleted_count == 1:
+            Fade  = []
+
+            for i in db.FadeCutFluffyDye.find():
+               Fade  .append(i)
+            return render_template('FadeCutFluffyDye.html', x=Fade)
+    else:
+            return 'Record not found or could not be deleted.'
+
+@app.route('/')
+def getFadeCutFluffyDye():
+    # Fetch data from the collection
+   FadeCutFluffyDye = db.FadeCutFluffyDye.find(FadeCutFluffyDye)
+   return render_template('FadeCutFluffyDye.html', FadeCutFluffyDye=FadeCutFluffyDye)
+
 
 # Add DyeCurlyCuts
 @app.route('/AddDyeCurlyCuts', methods=["POST", "GET"])
@@ -354,12 +485,12 @@ def AddDyeCurlyCuts():
         name = request.form['name']
         price = request.form['price']
         
-        DyeCurlyCuts= { 'name': name, 'price': price}
+    DyeCurlyCuts= { 'name': name, 'price': price}
 
-        db.DyeCurlyCuts.insert_one(DyeCurlyCuts)
-        if ('form submission success'):
+    db.DyeCurlyCuts.insert_one(DyeCurlyCuts)
+    if ('form submission success'):
                      return redirect (url_for('getDye'))
-        else:
+    else:
 
                   if ('form submission failed'):
                    return 'form unsuccessful'
@@ -379,6 +510,29 @@ def getDye():
      return render_template("DyeCurlyCuts.html" , x=Dye )
  
  
+@app.route('/delete_DyeCurlyCuts', methods=['POST'])
+def delete_DyeCurlyCuts():
+    if request.method == 'POST':
+       DyeCurlyCuts_id = request.form.get('delete_id')  # Get the ID of the record to delete
+        # Convert the string ID to ObjectId
+       DyeCurlyCuts_id = ObjectId(DyeCurlyCuts_id)
+        # Delete the record from the collection
+       result = db.DyeCurlyCuts.delete_one({'_id': DyeCurlyCuts_id})
+    if result.deleted_count == 1:
+            Dye = []
+
+            for i in db.DyeCurlyCuts.find():
+               Dye  .append(i)
+            return render_template('DyeCurlyCuts.html', x=Dye)
+    else:
+            return 'Record not found or could not be deleted.'
+
+@app.route('/')
+def getDyeCurlyCuts():
+    # Fetch data from the collection
+   DyeCurlyCuts = db.DyeCurlyCuts.find(DyeCurlyCuts)
+   return render_template('DyeCurlyCuts.html', DyeCurlyCuts=DyeCurlyCuts)
+
  
  
 if __name__ == "__main__":

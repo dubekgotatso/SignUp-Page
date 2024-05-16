@@ -61,7 +61,7 @@ def getBooking():
      if request.method == 'GET':
           Booking = []
 
-          for i in db.booking.find():
+          for i in db.bookings.find():
             Booking.append(i)
             
              
@@ -80,7 +80,7 @@ def addbooking():
      
       
       booking = {"category":category,"time":time,"date":date,}
-      db.booking.insert_one(booking)
+      db.bookings.insert_one(booking)
       if ('form submission success'):
                      return render_template("bookings.html")
       else:
@@ -252,28 +252,28 @@ def getBrush():
      return render_template("BrushWaveCuts.html" , x=Brush )
  
  
-@app.route('/delete_BrushWaveCut', methods=['POST'])
-def delete_BrushWaveCut():
+@app.route('/delete_DoubleDyeFade', methods=['POST'])
+def delete_DoubleDyeFade():
     if request.method == 'POST':
-        BrushWaveCut_id = request.form.get('delete_id')  # Get the ID of the record to delete
+        DoubleDyeFade_id = request.form.get('delete_id')  # Get the ID of the record to delete
         # Convert the string ID to ObjectId
-        BrushWaveCut_id = ObjectId(BrushWaveCut_id)
+        DoubleDyeFade_id = ObjectId(DoubleDyeFade_id)
         # Delete the record from the collection
-        result = db.BrushWaveCut.delete_one({'_id': BrushWaveCut_id})
+        result = db.DoubleDyeFade.delete_one({'_id': DoubleDyeFade_id})
         if result.deleted_count == 1:
-            Brush = []
+            Double = []
 
-            for i in db.BrushWaveCut.find():
-               Brush .append(i)
-            return render_template('BrushWaveCuts.html', x=Brush )
+            for i in db.DoubleDyeFade.find():
+               Double .append(i)
+            return render_template('DoubleDyeFade.html', x=Double  )
         else:
             return 'Record not found or could not be deleted.'
 
 @app.route('/')
-def getBrushWaveCut():
+def getDoubleDyeFade():
     # Fetch data from the collection
-   BrushWaveCut = db.BrushWaveCut.find(BrushWaveCut)
-   return render_template('BrushWaveCuts.html', BrushWaveCut=BrushWaveCut)
+   DoubleDyeFade= db.DoubleDyeFade.find(DoubleDyeFade)
+   return render_template('DoubleDyeFade.html', DoubleDyeFade=DoubleDyeFade)
 
  
  
@@ -435,7 +435,7 @@ def AddFadeCutFluffyDye():
         if ('form submission success'):
                      return redirect (url_for('getFade'))
         else:
-
+            
                   if ('form submission failed'):
                    return 'form unsuccessful'
         
@@ -485,17 +485,17 @@ def AddDyeCurlyCuts():
         name = request.form['name']
         price = request.form['price']
         
-    DyeCurlyCuts= { 'name': name, 'price': price}
+        DyeCurlyCuts= { 'name': name, 'price': price}
 
-    db.DyeCurlyCuts.insert_one(DyeCurlyCuts)
-    if ('form submission success'):
+        db.DyeCurlyCuts.insert_one(DyeCurlyCuts)
+        if ('form submission success'):
                      return redirect (url_for('getDye'))
-    else:
-
+        else:
+            
                   if ('form submission failed'):
                    return 'form unsuccessful'
         
-    return render_template("DyeCurlyCuts.html")
+    return render_template("AddDyeCurlyCuts.html")
 
 #Display DyeCurlyCuts
 

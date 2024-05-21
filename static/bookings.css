@@ -1,7 +1,7 @@
 /* Styles */
 body {
     font-family: Arial, sans-serif;
-    background-image: url(https://i.pinimg.com/564x/09/94/ec/0994eccaab2f8a218f67f0731d9f38be.jpg);
+    background-image: url(/static/Кератин.jpeg);
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -29,7 +29,7 @@ table {
 
 th, td {
     padding: 10px;
-    border: 1px solid #ccc;
+    border: 1px solid black;
     text-align: center;
 }
 

@@ -59,6 +59,14 @@
                                 <input type="hidden" id="delete_id" name="delete_id" value={{i._id}}>
                                 <input type="submit" value="Delete">
                               </form>
+                        </td>
+                        <td>
+                            <form action="/Edit_FadeWaveCut1" method="post">
+                                <input type="hidden" id="update_id" name="update_id" value={{i._id}}>
+                                <input type="hidden" id="name" name="name" value={{i._name}}>
+                                <input type="hidden" id="price" name="price" value={{i._price}}>
+                                <input type="submit" value="Update">
+                            </form>
                         </td> 
                     </tr>
                     {% endfor %}

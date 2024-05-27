@@ -36,28 +36,24 @@
             <input type="hidden" id="Admin" name="Admin" value="Admin"><br><br>
             <input type="submit" value="Admin">
           </form>
-            <table border="1">
-                <thead>
-                    <tr>
-                        <th>Category</th>
-                        <th>Time</th>
-                        <th>Date</th>
-                        
-                    </tr>
-                </thead>
-                <tbody>
-                    {% for booking in x %}
-                    <tr>
-                        <td>{{ booking.Category }}</td>
-                        <td>{{ booking.Time  }}</td> 
-                            <td>{{ booking.Date }}</td>
-                        <td>
-                            <a href="/Services"><button type="button">Book Now</button></a>
-                        </td>
-                    </tr>
-                    {% endfor %}
-                </tbody>
-            </table>
+          <table  border="1">
+            <thead>
+                <tr>
+                  <th>categories</th>
+                  <th>date</th>
+                  <th>time</th>
+                
+                </tr>
+              </thead>
+              {% for i in x %}
+                <tr>
+                  <td>{{i.categories}}</td>
+                  <td>{{i.date}}</td>
+                  <td>{{i.time}}</td>
+                  
+                </tr>
+                {% endfor %}
+              </table> 
         </div>
                 </tbody>
             </table>

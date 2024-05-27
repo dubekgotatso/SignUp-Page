@@ -117,19 +117,19 @@ def add_item():
 @app.route("/Addbooking", methods=["GET", "POST"])
 def Addbooking():
     if request.method == 'POST':
-        Category = request.form.get("Category")
-        Date = request.form.get("Date")
-        Time = request.form.get("Time")
+        categories = request.form.get("categories")
+        date = request.form.get("date")
+        time = request.form.get("time")
       
-        booking = {"Category": Category, "Date": Date, "Time": Time}
+        booking = {"categories": categories, "date": date, "time": time}
         db.booking.insert_one(booking)
         
         if ('form submission success'):
            booking = db.booking.find()
-           return render_template ("Services.html", booking=booking)
+           return render_template ("Services.html", x=booking)
         else:
            if('form submission failed'):
-               return 'form umsuccessful'
+               return 'form unsuccessful'
     
     return ("Success")
 
@@ -140,7 +140,7 @@ def getBookings():
         booking = []
         for i in db.booking.find():
             booking.append(i)
-        return render_template("bookings.html" , booking=booking )
+        return render_template("bookings.html" , x=booking )
         
 
 @app.route("/Services")

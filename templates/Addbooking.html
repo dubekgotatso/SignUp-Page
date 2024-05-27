@@ -13,22 +13,33 @@
 <body>
     <div class="container">
         <div class="Image-container">
-            <form action="/AddBooking" method="post">
+            <form action="/Addbooking" method="post">
                <div class="form">
                    <center><h1> Book Now</h1></center>
                        <center><h2>Haircut</h2></center>
                            <br><br><br>
             
                                 
-                                   <input type="text" name="category" placeholder="category" required>
-                                      <input type="Time" name="time" placeholder="time" required><br><br>
-                                      <input type="date" name="date" placeholder="date" required><br><br>
-                                        <center><button type="submit">Add</button></center>
-           
+                                   <input type="text" id="Category"name="Category" placeholder="Category" required>
+                                   <input type="Date" id="Date" name="Date" placeholder="Date" required><br><br>
+                                      <input type="Time" id="Time" name="Time" placeholder="Time" required><br><br>
+                                      <!-- <center><button type="button" onclick="gotoLandingPage2('Add')">Add</button></center> -->
+                                      <form action="/Services" method="post">
+                                        <input type="hidden" id="Admin" name="Admin" value="Admin"><br><br>
+                                        <input type="submit" value="Admin">
+                                      </form>
       </div> 
      </form> 
    </div> 
- </div>  
-    <script src=""></script> 
+ </div> 
+ 
+ <script>
+    function gotoLandingPage2(){
+
+        window.location.href="http://127.0.0.1:5000/Addbooking";
+    } 
+ </script>
+
+ <script src=""></script>
 </body>
 </html>

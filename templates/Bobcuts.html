@@ -44,8 +44,9 @@
                     <tr>
                         <th>Name</th>
                         <th>Price</th>
-                        <th>Delete</th>
-                        <th>Update</th>
+                        <th>Booking</th>
+                        
+                       
                     </tr>
                 </thead>
                 <tbody>
@@ -59,14 +60,20 @@
                                 <input type="submit" value="Delete">
                               </form>
                         </td>
-                        <td>
+                       <td>
                             <form action="/Edit_BobCuts1" method="post">
                                 <input type="hidden" id="update_id" name="update_id" value={{i._id}}>
                                 <input type="hidden" id="name" name="name" value={{i._name}}>
                                 <input type="hidden" id="price" name="price" value={{i._price}}>
                                 <input type="submit" value="Update">
                             </form>
-                        </td>
+                        </td> 
+                         <td>
+                            <form action="/AddBooking" method="post">
+                                <input type="hidden" id="book_id" name="book_id" value={{i._id}}>
+                                <input type="submit" value="book">
+                              </form>
+                        </td> 
                     </tr>
                     {% endfor %}
                 </tbody>

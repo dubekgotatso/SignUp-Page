@@ -26,3 +26,9 @@ function isValidPassword(password) {
     var hasSymbol = /[!@#$%^&*()_+\-=[\]{};':"\\|,.<>/?]/.test(password);
     return hasNumber && hasLetter && hasSymbol;
 }
+
+
+
+
+
+

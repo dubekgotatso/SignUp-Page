@@ -3,7 +3,7 @@ body {
     margin: 0;
     padding: 20px;
     background-color: hsl(0, 8%, 95%);
-    background-image: url(/static/Кератин.jpeg);
+    background-image: url(/static/Dark\ gray\ background.jpeg);
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -210,3 +210,10 @@ nav ul li a:hover {
     border-radius: 10px; 
     margin-top: 50px;
 }
+
+.slide{
+    height: 450px;
+    margin-top: 20px;
+    width: 400px;
+    border-radius: 15px;
+  }

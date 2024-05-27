@@ -17,7 +17,7 @@
         <ul>
             <li><a href="#">Home</a></li>
             <li><a href="/about">About</a></li>
-            <li><a href="/Booking">Bookings</a></li>
+            <li><a href="#" onclick="gotoLandingPage1('')">Bookings</a></li>
             <li class="dropdown"><a href="#">  
                 <span>Services</span>
                   <div class="dropdown-content">
@@ -104,6 +104,14 @@
     </div>
 
 
+    <script>
+        function gotoLandingPage1(){
+
+            window.location.href="http://127.0.0.1:5000/booking";
+        } 
+    </script>
+
+
     
 
     
@@ -111,9 +119,11 @@
 
    
 
-    
+    <script src="/Login-Page.Js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+
 </body>
 
+
 </html>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
-<script src="/landing.js" async defer></script>
+

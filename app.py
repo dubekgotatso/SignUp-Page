@@ -12,9 +12,9 @@ db = mongo.db
 
 
 # landing page
-# @app.route('/')
-# def landing():
-#         return render_template("index.html")
+@app.route('/')
+def landing():
+        return render_template("index.html")
 
 @app.route('/signup', methods=['GET', 'POST'])
 def signup():
@@ -39,8 +39,33 @@ def signup():
     # Render the signup form template
     return render_template('SignUp-Page.html')
 
-# Login Page
 
+#Client Signup
+@app.route('/SignUp_Client', methods=['GET', 'POST'])
+def signupClient():
+    if request.method == 'POST':
+        # Extract form data
+        username = request.form['username']
+        email = request.form['email']
+        password = request.form['password']
+
+        # Check if username or email already exists
+        existing_user = db.SignUp_Client.find_one({'$or': [{'username': username}, {'email': email}]})
+        if existing_user:
+            return 'Username or email already exists!'
+
+        # Insert new user into the database
+        SignUpClientdetails = {'username': username, 'email': email, 'password': password}
+        db.SignUp_Client.insert_one(SignUpClientdetails)
+        
+        # Redirect to login page or homepage
+        return redirect(url_for('loginClient'))
+
+    # Render the signup form template
+    return render_template('SignUp_Client.html')
+
+
+# Login Page
 @app.route('/login', methods=['GET', 'POST'])
 def login():
     if request.method == 'POST':
@@ -60,42 +85,72 @@ def login():
     # Render the login form template
     return render_template('Login-Page.html')
 
-# Booking
 
-@app.route("/Booking", methods=["POST", "GET"] )
-def getBooking():
-     if request.method == 'GET':
-          Booking = []
+#Client Login
+@app.route('/loginClient', methods=['GET', 'POST'])
+def loginClient():
+    if request.method == 'POST':
+        # Extract form data
+        username = request.form['username']
+        password = request.form['password']
 
-          for i in db.bookings.find():
-            Booking.append(i)
-            
-             
-     
-     return render_template("bookings.html" , Booking=Booking )
+       
+        existing_user = db.SignUp_Client.find_one({'username': username, 'password': password})
+        if existing_user:
+           
+            return render_template('Services.html')
+        else:
+            # User not found, display error message
+            return 'Invalid username or password'
+
+    # Render the login form template
+    return render_template('Login_Client.html')
+
+
+@app.route('/AddItem', methods=["POST"])
+def add_item():   
+    if request.method == 'POST':
+        return render_template("Addbooking.html")
+    return render_template("Addbooking.html")
+
+#Add Booking
+@app.route("/Addbooking", methods=["GET", "POST"])
+def Addbooking():
+    if request.method == 'POST':
+        Category = request.form.get("Category")
+        Date = request.form.get("Date")
+        Time = request.form.get("Time")
       
- 
-      
+        booking = {"Category": Category, "Date": Date, "Time": Time}
+        db.booking.insert_one(booking)
+        
+        if ('form submission success'):
+           booking = db.booking.find()
+           return render_template ("Services.html", booking=booking)
+        else:
+           if('form submission failed'):
+               return 'form umsuccessful'
+    
+    return ("Success")
 
-@app.route("/AddBooking", methods=["GET", "POST"])
-def addbooking():
-  if request.method == 'POST':
-      category = request.form["category"]
-      time = request.form["time"]
-      date = request.form["date"]
-     
-      
-      booking = {"category":category,"time":time,"date":date,}
-      db.bookings.insert_one(booking)
-      if ('form submission success'):
-                     return render_template("bookings.html")
-      else:
 
-                  if ('form submission failed'):
-                   return 'form unsuccessful'
-               
-  return render_template("Addbooking.html")
+#Display Bookings
+@app.route('/bookings', methods=["POST", "GET"])
+def getBookings():
+        booking = []
+        for i in db.booking.find():
+            booking.append(i)
+        return render_template("bookings.html" , booking=booking )
+        
 
+@app.route("/Services")
+def Service():
+    return render_template("Services.html")
+
+@app.route('/index')
+def index():
+       
+       return render_template("Dashboard.html")
 
 
 @app.route("/")
@@ -809,28 +864,7 @@ def getDyeCurlyCuts():
    DyeCurlyCuts = db.DyeCurlyCuts.find(DyeCurlyCuts)
    return render_template('DyeCurlyCuts.html', DyeCurlyCuts=DyeCurlyCuts)
 
-# @app.route('/SignUp_Client', methods=['GET', 'POST'])
-# def signup():
-#     if request.method == 'POST':
-#         # Extract form data
-#         username = request.form['username']
-#         email = request.form['email']
-#         password = request.form['password']
 
-#         # Check if username or email already exists
-#         existing_user = db.SignUp_Client.find_one({'$or': [{'username': username}, {'email': email}]})
-#         if existing_user:
-#             return 'Username or email already exists!'
-
-#         # Insert new user into the database
-#         SignUpClientdetails = {'username': username, 'email': email, 'password': password}
-#         db.SignUpClientdetails.insert_one(SignUpClientdetails)
-        
-#         # Redirect to login page or homepage
-#         return redirect(url_for('login'))
-
-#     # Render the signup form template
-#     return render_template('SignUp_Client.html')
  
 if __name__ == "__main__":
     app.run(debug=True)

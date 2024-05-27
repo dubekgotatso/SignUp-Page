@@ -1,41 +1,62 @@
 <!DOCTYPE html>
+
 <html>
     <head>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <title>Booking Form</title>
-        <meta name="description" content="Booking form page">
+        <title></title>
+        <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="stylesheet" href="/static/bookings.css">
     </head>
     <body>
-        <div class="container">
-            <h1>Booking Form</h1>
-           
-            <!-- Button to AddBooking Page -->
-            <a href="/AddBooking"><button type="button">Book Now</button></a>
+         
+        <nav>
+            <ul>
+                <li><a href="#">Home</a></li>
+                <li><a href="/about">About</a></li>
+                <li><a href="#" onclick="gotoLandingPage1('')">Bookings</a></li>
+                <li class="dropdown"><a href="#">  
+                    <span>Services</span>
+                      <div class="dropdown-content">
+                      <b><a href="/FadeWaveCut">Fade Wave Cuts</a></b>
+                      <b><a href="/BobCuts">BobCuts</a></b>
+                      <b><a href="/BrushWaveCut ">Brush Wave Cut</a></b>
+                      <b><a href="/StyleCutDye">Style Cut Dye </Make-Up></a></b>
+                      <b><a href="/TopDyeHairCut">Top Dye Hair Cut</a></b>
+                      <b><a href="/FadeCutFluffyDye">Fade Cut Fluffy Dye</a></b>
+                      <b><a href="/DoubleDyeFade ">Double Dye Fade</a></b>
+                      <b><a href="/DyeCurlyCuts">Dye Curly Cuts</a></b>
+                    </div>
+              </a></li>
+            </ul>
+        </nav>     
+         <br><br>  
+        <form action="/signup" method="post">
+            <input type="hidden" id="Admin" name="Admin" value="Admin"><br><br>
+            <input type="submit" value="Admin">
+          </form>
             
-            <!-- Booking details table -->
-            <table action="/Booking" method="Get" border="1">
-                <caption>Booking Details</caption>
-                <thead>
-                    <tr>
-                        <th>Category</th>
-                        <th>Date</th>
-                        <th>Time</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <!-- Loop through bookings (assumes you have server data) -->
-                    {% for booking in booking %}
-                    <tr>
-                        <td>{{ booking.category }}</td>
-                        <td>{{ booking.date }}</td>
-                        <td>{{ booking.time }}</td>
-                    </tr>
-                    {% endfor %}
-                </tbody>
-            </table>
-        </div>
+        <br><br><br>
+        <script src="" async defer></script>
+        <table  border="1">
+            <thead>
+                <tr>
+                  <th>Category</th>
+                  <th>date</th>
+                  <th>time</th>
+                
+                </tr>
+              </thead>
+              {% for i in x %}
+                <tr>
+                  <td>{{i.categories}}</td>
+                  <td>{{i.date}}</td>
+                  <td>{{i.time}}</td>
+                  
+                </tr>
+                {% endfor %}
+              </table> 
     </body>
 </html>
+

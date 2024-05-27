@@ -7,7 +7,7 @@
         <title></title>
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel="stylesheet" href="/static/DoubleDyeFade.css">
+        <link rel="stylesheet" href="/static/Services.css">
     </head>
     <body>
 
@@ -31,50 +31,40 @@
                     </div>
             </ul>
         </nav>
-
-        <div class="content">
-           
-            <div class="button-container">
-                <a href="/AddDoubleDyeFade"><button>Add</button></a>
-               
-            </div>
+        <br><br><br>
+        <form action="/AddItem" method="post">
+            <input type="hidden" id="Admin" name="Admin" value="Admin"><br><br>
+            <input type="submit" value="Admin">
+          </form>
             <table border="1">
                 <thead>
                     <tr>
-                        <th>Name</th>
-                        <th>Price</th>
-                        <th>Booking</th>
+                        <th>Category</th>
+                        <th>Time</th>
+                        <th>Date</th>
                         
                     </tr>
                 </thead>
                 <tbody>
-                    {% for i in x %}
+                    {% for booking in x %}
                     <tr>
-                        <td>{{ i.name }}</td>
-                        <td><p>R{{ i.price }}</p></td>
+                        <td>{{ booking.Category }}</td>
+                        <td>{{ booking.Time  }}</td> 
+                            <td>{{ booking.Date }}</td>
                         <td>
-                            <form action="/delete_DoubleDyeFade" method="post">
-                                <input type="hidden" id="delete_id" name="delete_id" value={{i._id}}>
-                                <input type="submit" value="Delete">
-                              </form> 
+                            <a href="/Services"><button type="button">Book Now</button></a>
                         </td>
-                        <td>
-                            <form action="/Edit_DoubleDyeFade1" method="post">
-                                <input type="hidden" id="update_id" name="update_id" value={{i._id}}>
-                                <input type="hidden" id="name" name="name" value={{i._name}}>
-                                <input type="hidden" id="price" name="price" value={{i._price}}>
-                                <input type="submit" value="Update">
-                            </form>
-                        </td> 
                     </tr>
                     {% endfor %}
                 </tbody>
             </table>
         </div>
+                </tbody>
+            </table>
+        </div>
+        
       
 
-        
-        
         <script src="" async defer></script>
     </body>
 </html>

@@ -1,0 +1,5 @@
+Flask==2.2.2
+Flask-PyMongo==2.3.0
+bson
+werkzeug==2.2.3
+pip==23.2.1

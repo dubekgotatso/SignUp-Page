@@ -98,7 +98,7 @@ def loginClient():
         existing_user = db.SignUp_Client.find_one({'username': username, 'password': password})
         if existing_user:
            
-            return render_template('Services.html')
+            return render_template('ClientLandingPage.html')
         else:
             # User not found, display error message
             return 'Invalid username or password'

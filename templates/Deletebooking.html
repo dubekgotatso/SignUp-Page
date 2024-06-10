@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Service Form</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+     <link rel="stylesheet" href="/static/DeleteTopDyeHairCut.css">
+       
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="Image-container">
+            <form action="/Deletebooking" method="post">
+               <div class="form">
+                   <center><h1>Delete Booking</h1></center>
+                       <center><h2></h2></center>
+                           <br><br><br>
+            
+                                
+                                   <input type="text" id= "categories" categories="categories" required>
+                                   <input type="number" id="date" date="date" required>
+                                   <input type="number" id= "time" time = "time" required>
+                                    <input type="hidden" name="booking_id" value="{{ row._id }}">
+                                    <center><button type="submit">Delete</button></center>
+                                      
+      </div> 
+     </form> 
+   </div> 
+ </div>  
+    <script src=""></script> 
+</body>
+</html>

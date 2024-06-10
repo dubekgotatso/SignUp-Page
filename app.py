@@ -1,4 +1,4 @@
-from flask import Flask, render_template, request, redirect, url_for,session
+from flask import Flask, render_template, request, redirect, url_for,session, jsonify
 from flask_pymongo import PyMongo
 from bson.objectid import *
 
@@ -107,11 +107,11 @@ def loginClient():
     return render_template('Login_Client.html')
 
 
-@app.route('/AddItem', methods=["POST"])
-def add_item():   
-    if request.method == 'POST':
-        return render_template("Addbooking.html")
-    return render_template("Addbooking.html")
+# @app.route('/AddItem', methods=["POST"])
+# def add_item():   
+#     if request.method == 'POST':
+#         return render_template("Addbooking.html")
+#     return render_template("Addbooking.html")
 
 #Add Booking
 @app.route("/Addbooking", methods=["GET", "POST"])
@@ -126,7 +126,7 @@ def Addbooking():
         
         if ('form submission success'):
            booking = db.booking.find()
-           return render_template ("Services.html", x=booking)
+           return render_template ("bookings.html", booking=booking)
         else:
            if('form submission failed'):
                return 'form unsuccessful'
@@ -137,21 +137,70 @@ def Addbooking():
 #Display Bookings
 @app.route('/bookings', methods=["POST", "GET"])
 def getBookings():
-        booking = []
+    booking = []
+    if request.method == 'GET':
         for i in db.booking.find():
             booking.append(i)
-        return render_template("bookings.html" , x=booking )
+            print("tests", booking)
+        return render_template("bookings.html" , booking=booking )
+    
+    
+@app.route('/Editbooking', methods=['POST'])
+def Edit_booking():
+    if request.method == 'POST':
+        categories = request.form.get("categories")  # Get the ID of the record to delete
+        date = request.form.get("date")  # Get the ID of the record to delete
+        time = request.form.get("time")  # Get the ID of the record to delete
+
+        # Convert the string ID to ObjectId
+        booking_id = ObjectId(booking_id)
+        # Edit the record from the collection
+        
+        result = db.booking.update_one({'_id': booking_id},{'$set' :{'categories' :categories, 'date':date, 'time':time}})
+        booking = []
+
+        for i in db.booking.find():
+          booking .append(i)
+        return render_template('bookings.html', booking=booking)
+
+@app.route('/Edit_booking1', methods=['POST'])
+def Edit_booking1():
+    if request.method == 'POST':
+        booking_id = request.form.get('update_id') 
+        categories = request.form.get("categories") 
+        date = request.form.get("date")  
+        time = request.form.get("time") 
+
+        return render_template('Editbooking.html', categories=categories, date=date,time=time, booking_id=booking_id)
+    
+    
+@app.route('/delete_booking', methods=['POST'])
+def delete_booking():
+    if request.method == 'POST':
+        booking_id = request.form.get('delete_id')  # Get the ID of the record to delete
+        # Convert the string ID to ObjectId
+        booking_id = ObjectId(booking_id)
+        # Delete the record from the collection
+        result = db.booking.delete_one({'_id': booking_id})
+        if result.deleted_count == 1:
+            booking = []
+
+            for i in db.booking.find():
+                booking.append(i)
+            return render_template('bookings.html', booking=booking)
+        else:
+            return 'Record not found or could not be deleted.'
+
         
 
-@app.route("/Services")
-def Service():
-    return render_template("Services.html")
+# @app.route("/Services")
+# def Service():
+#     return render_template("Services.html")
 
-@app.route('/index')
-def index():
-       
-       return render_template("Dashboard.html")
 
+@app.route("/selectedservice")
+def test():
+    return render_template("Addbooking.html")
 
 @app.route("/")
 def landingPage():
@@ -161,6 +210,9 @@ def landingPage():
 def home():
     return render_template("landing.html")
 
+@app.route("/homepage")
+def homepage():
+    return render_template("ClientLandingPage.html")
 
 @app.route("/about")
 def about():

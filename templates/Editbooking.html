@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Service Form</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+     <link rel="stylesheet" href="/static/Editbooking.css">
+       
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="Image-container">
+            <form action="/Editbooking" method="post">
+               <div class="form">
+                   <center><h1>Update Service</h1></center>
+                       <center><h2>Booking</h2></center>
+                           <br><br><br>
+            
+                           <input type="hidden" name="id" value={{booking_id}} required>
+
+                                   <input type="text" categories ="categories" placeholder="Category" >
+                                      <input type="date" date="date" placeholder="Date"><br><br>
+                                       <input type="time" time="time" placeholder="Time"><br><br>
+                                        <center><button type="submit">Update</button></center>
+           
+      </div> 
+     </form> 
+   </div> 
+ </div>  
+    <script src=""></script> 
+</body>
+</html>

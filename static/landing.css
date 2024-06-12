@@ -16,6 +16,7 @@ nav {
     background-color: #333;
     position: fixed; /* Fixed position */
     top: 0; /* Lock it at the top */
+    left: 0;
     width: 100%; /* Full width of the viewport */
     background-color: #333; /* Background color */
     padding: 10px;
@@ -69,7 +70,7 @@ nav ul li a:hover {
     max-width: 250px; /* Adjust as needed */
     text-align: center;
     margin: 0 10px; /* Adds space between cards */
-    background-color: transparent;
+    background-color: rgb(189, 186, 186);
     color: whitesmoke;
     margin-top: 70px;
 }

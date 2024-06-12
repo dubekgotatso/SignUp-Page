@@ -13,23 +13,25 @@
 <body>
     <div class="container">
         <div class="Image-container">
-            <form action="/Editbooking" method="post">
+
+            <form action="/Editbooking" method="post"  >
                <div class="form">
-                   <center><h1>Update Service</h1></center>
-                       <center><h2>Booking</h2></center>
+                   <center><h1>EditBooking</h1></center>
+                       <center><h2></h2></center>
                            <br><br><br>
             
-                           <input type="hidden" name="id" value={{booking_id}} required>
+                           <input type="hidden" id="booking_id" name="booking_id" value={{booking_id}} required>
 
-                                   <input type="text" categories ="categories" placeholder="Category" >
-                                      <input type="date" date="date" placeholder="Date"><br><br>
-                                       <input type="time" time="time" placeholder="Time"><br><br>
-                                        <center><button type="submit">Update</button></center>
+                                   <input type="text" id="categories" name="categories"  placeholder="Category" >
+                                      <input type="date" id="date" name="date" placeholder="Date"><br><br>
+                                       <input type="time" id="time" name="time"  placeholder="Time"><br><br>
+                                        <center><button type="submit">Edit</button></center>
            
       </div> 
      </form> 
    </div> 
  </div>  
+
     <script src=""></script> 
 </body>
 </html>

@@ -148,29 +148,39 @@ def getBookings():
 @app.route('/Editbooking', methods=['POST'])
 def Edit_booking():
     if request.method == 'POST':
+        
+        booking_id = request.form.get("booking_id") 
         categories = request.form.get("categories")  # Get the ID of the record to delete
         date = request.form.get("date")  # Get the ID of the record to delete
         time = request.form.get("time")  # Get the ID of the record to delete
 
         # Convert the string ID to ObjectId
-        booking_id = ObjectId(booking_id)
+        booking_id= ObjectId(booking_id)
         # Edit the record from the collection
-        
+        print("tests", booking_id)
+        print("tests2", categories )
+        print("tests3",  date )
+        print("tests4", time )
+
         result = db.booking.update_one({'_id': booking_id},{'$set' :{'categories' :categories, 'date':date, 'time':time}})
         booking = []
 
         for i in db.booking.find():
           booking .append(i)
+        #   print("tests", booking)
         return render_template('bookings.html', booking=booking)
 
 @app.route('/Edit_booking1', methods=['POST'])
 def Edit_booking1():
     if request.method == 'POST':
-        booking_id = request.form.get('update_id') 
+        booking_id = request.form.get('booking_id') 
         categories = request.form.get("categories") 
         date = request.form.get("date")  
         time = request.form.get("time") 
-
+        print("tests second ", booking_id)
+        print("tests second 2", categories )
+        print("tests second 3",  date )
+        print("tests second 4", time )
         return render_template('Editbooking.html', categories=categories, date=date,time=time, booking_id=booking_id)
     
     
@@ -190,8 +200,7 @@ def delete_booking():
             return render_template('bookings.html', booking=booking)
         else:
             return 'Record not found or could not be deleted.'
-
-        
+              
 
 # @app.route("/Services")
 # def Service():
@@ -278,7 +287,10 @@ def Edit_FadeWaveCut():
         # Convert the string ID to ObjectId
         FadeWaveCut_id = ObjectId(FadeWaveCut_id)
         # Edit the record from the collection
-        
+        print("tests", FadeWaveCut_id)
+        print("tests2", name )
+        print("tests3",  price )
+      
         result = db.FadeWaveCut.update_one({'_id': FadeWaveCut_id},{'$set' :{'name' :name, 'price':price}})
         cut = []
 

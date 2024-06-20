@@ -96,8 +96,6 @@
         <button class="btn btn-primary" id="close-popup">Close</button>
     </div>
 
-
-
     {% for display in displays %}
     <div class="notification-container">
         <div class="notification">
@@ -118,9 +116,6 @@
         </div>
     </div>
     {% endfor %}
-    
-   
-
 </body>
   
 <script>
@@ -177,26 +172,25 @@
         document.getElementById('close-popup').addEventListener('click', function() {
             document.getElementById('popup').style.display = 'none';
             window.location.href = "http://127.0.0.1:5000/review_display";
-            
+        });
+
+        // Close button functionality
+        document.querySelectorAll('.close-btn').forEach(button => {
+            button.addEventListener('click', function() {
+                this.closest('.notification-container').style.display = 'none';
+            });
         });
     });
 
+    function goToHaircutReview(action) {
+        // Implement navigation logic if needed
+        // Example: window.location.href = '/haircut_review';
+    }
 
-
-</script>
-
-   
-
-<script>
-function goToHaircutReview(action) {
-    // Implement navigation logic if needed
-    // Example: window.location.href = '/haircut_review';
-}
-
-function delete_display() {
-    // Implement delete confirmation logic if needed
-    return confirm('Are you sure you want to delete this review?');
-}
+    function delete_display() {
+        // Implement delete confirmation logic if needed
+        return confirm('Are you sure you want to delete this review?');
+    }
 </script>
 <script src="{{ url_for('static', filename='review.js') }}"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>

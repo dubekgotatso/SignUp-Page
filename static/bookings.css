@@ -1,5 +1,5 @@
 body {
-    background-image: url(/static/Кератин.jpeg);
+    background-image: url(/static/vecteezy_ai-generated-barbershop-advertisment-background-with-copy-space_37236470.jpg);
     margin: 0;
     padding: 0;
     font-family: Arial, sans-serif;
@@ -136,7 +136,7 @@ nav ul li a:hover {
   padding: 8px;
   text-align: left;
   margin-left: 100px;
- color:whitesmoke;
+  color:whitesmoke;
   }
   
   th {
@@ -163,3 +163,14 @@ button {
 button:hover {
     background-color: aqua;
 }
+
+.btn-danger{
+  padding: 10px 20px;
+  border: none;
+  border-radius: 4px;
+  background-color: #4CAF50;
+  color: white;
+  cursor: pointer;
+}
+
+

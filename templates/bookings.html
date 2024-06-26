@@ -43,6 +43,7 @@
         <th>Time</th>
         <th>Update</th>
         <th>Cancel</th>
+        <th>Reviews</th>
     </tr>
     </thead>
     {% for booking in booking %}
@@ -62,6 +63,11 @@
         <td>
             <button type="button" class="btn btn-danger" onclick="confirmCancellation('{{booking._id}}')">Cancel</button>
         </td>
+
+        <td>
+            <button type="button" class="btn btn-primary" onclick="gotoLandingPage5('')">Reviews</button>
+        </td>
+
     </tr>
     {% endfor %}
 </table>
@@ -83,6 +89,7 @@
                     <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
                     <button type="submit" class="btn btn-danger">Cancel Booking</button>
                 </form>
+
             </div>
         </div>
     </div>
@@ -98,5 +105,15 @@
         cancelModal.show();
     }
 </script>
+
+<script>
+    function gotoLandingPage5(){
+
+
+        window.location.href= "http://127.0.0.1:5000/review_display";
+    }
+</script>
+
+
 </body>
 </html>

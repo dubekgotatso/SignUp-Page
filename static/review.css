@@ -4,8 +4,9 @@ body {
     background-color: #f2f2f2;
     margin: 0;
     padding: 0;
-    background-image: url(/static/Кератин.jpeg);
-}
+    background-image: url(/static/vecteezy_ai-generated-barbershop-advertisment-background-with-copy-space_37236470.jpg);
+    background-size: cover;
+}   
 
 .container {
     max-width: 800px;

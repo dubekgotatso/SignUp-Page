@@ -2,15 +2,10 @@ from flask import Flask, render_template, request, redirect, url_for,session, js
 from flask_pymongo import PyMongo
 from bson.objectid import *
 
-
-
-
 app = Flask(__name__)
 app.config['MONGO_URI'] = 'mongodb://localhost:27017/MiniProject'
 mongo = PyMongo(app)
 db = mongo.db
-
-
 
 # landing page
 @app.route('/')

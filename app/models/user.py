@@ -1,16 +1,33 @@
 from .. import mongo
 
-class User:
-
+class Blur:
+    
+   
     def create_user(signupdetails):
-        mongo.db.signup.insert_one(signupdetails)
-        return str(signupdetails)
-    
-    # def find_by_username_or_email(self, username, email):
-    #     return mongo.db.signup.find_one({'$or': [{'username': username}, {'email': email}]})
+        existing_user = Blur.find_user_by_username_or_email(signupdetails['username'], signupdetails['email'])
+        if existing_user:
+            return False  # User already exists
+        else:
+            # Insert the new user into the database
+            mongo.db.signup.insert_one(signupdetails)
+            return True  # User created successfully
 
-    def get_all_login():
-        signup = mongo.db.signup.find_one(signup)
-        return list(mongo.db.signup.find({}, {'_id', 0}))
     
-  
+    def find_user_by_username_or_email(username, email):
+        return mongo.db.signup.find_one({'$or': [{'username': username}, {'email': email}]})
+
+    
+    def find_user_by_username_and_password(username, password):
+        return mongo.db.signup.find_one({'username': username, 'password': password})
+
+    
+    def get_user_by_email(email):
+        return mongo.db.signup.find_one({'email': email})
+
+
+
+
+    
+    
+    
+    
